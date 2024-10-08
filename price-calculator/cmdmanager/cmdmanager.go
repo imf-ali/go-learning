@@ -3,7 +3,6 @@ package cmdmanager
 import "fmt"
 
 type CMDManager struct {
-
 }
 
 func (cmd CMDManager) ReadLines() ([]string, error) {
@@ -12,11 +11,11 @@ func (cmd CMDManager) ReadLines() ([]string, error) {
 
 	for {
 		var line string
-    fmt.Scanln(&line)
-    if line == "" {
-      break
-    }
-    lines = append(lines, line)
+		fmt.Scanln(&line)
+		if line == "" {
+			break
+		}
+		lines = append(lines, line)
 	}
 	return lines, nil
 }
@@ -27,5 +26,5 @@ func (cmd CMDManager) WriteResult(data any) error {
 }
 
 func New() CMDManager {
-  return CMDManager{}
+	return CMDManager{}
 }
